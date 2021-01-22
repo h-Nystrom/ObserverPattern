@@ -10,7 +10,7 @@ namespace Controller
         static event CoinsChange CoinsChanged;
         [SerializeField] CoinAchievement[] coinAchievements;
         [SerializeField] UnityEvent<string> totalCoinsChanged;
-        [SerializeField] Transform parent;
+        [SerializeField] Transform parent, popUpParent;
         public int Amount{
             get => PlayerPrefs.GetInt(name,0);
             private set => PlayerPrefs.SetInt(name,value);
@@ -20,10 +20,10 @@ namespace Controller
             foreach (var coinAchievement in coinAchievements){
                 if (Amount < coinAchievement.GoalAmount){
                     CoinsChanged += coinAchievement.AddCoin;
-                    coinAchievement.SetUp(parent);
+                    coinAchievement.SetUp(parent, popUpParent);
                 }
                 else{
-                    coinAchievement.SetUp(parent);
+                    coinAchievement.SetUp(parent, popUpParent);
                     coinAchievement.InstantiateAchievement();
                 }
             }
