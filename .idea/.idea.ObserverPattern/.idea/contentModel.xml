@@ -11,11 +11,16 @@
             <e p="AchievementsObserver.cs" t="Include" />
             <e p="CameraController.cs" t="Include" />
             <e p="Coin.cs" t="Include" />
+            <e p="GameObserver.cs" t="Include" />
             <e p="PlayerMovementController.cs" t="Include" />
             <e p="Trap.cs" t="Include" />
           </e>
           <e p="Model" t="Include">
-            <e p="CollectedCoins.cs" t="Include" />
+            <e p="CoinAchievement.cs" t="Include" />
+            <e p="CoinsCollected.cs" t="Include" />
+            <e p="TotalCoinsCollected.cs" t="Include" />
+          </e>
+          <e p="View" t="Include">
             <e p="UnitHealth.cs" t="Include" />
           </e>
         </e>

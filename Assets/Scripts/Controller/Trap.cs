@@ -1,6 +1,6 @@
-﻿using System;
-using Model;
+﻿using Model;
 using UnityEngine;
+using View;
 
 namespace Controller{
     public class Trap : MonoBehaviour{

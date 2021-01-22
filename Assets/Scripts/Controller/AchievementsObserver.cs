@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using Model;
+﻿using Model;
 using UnityEngine;
+using View;
 
 namespace Controller{
     public class AchievementsObserver : MonoBehaviour{

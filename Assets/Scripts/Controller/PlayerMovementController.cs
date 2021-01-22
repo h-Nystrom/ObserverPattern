@@ -1,5 +1,6 @@
 ﻿using Model;
 using UnityEngine;
+using View;
 
 namespace Controller{
     [RequireComponent(typeof(Rigidbody), typeof(IHealth))]

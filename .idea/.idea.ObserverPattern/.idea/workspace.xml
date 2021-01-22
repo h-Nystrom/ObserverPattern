@@ -10,6 +10,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controller/PlayerMovementController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controller/AchievementsObserver.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/CoinAchievement.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -22,12 +23,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Controller/Health.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controller/PlayerHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controller/PlayerMovementController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controller/Coin.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controller/Trap.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controller/UnitHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Model/UnitHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controller/AchievementsObserver.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Model/Coins.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Model/TotalCoinsCollected.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Model/CollectedCoins.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controller/GameObserver.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controller/AchievementsObserver.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controller/Trap.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Model/UnitHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controller/Coin.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Model/CoinsCollected.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/View/UnitHealth.cs" />
       </list>
     </option>
   </component>
@@ -72,7 +78,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611306230585</updated>
-      <workItem from="1611306234123" duration="4702000" />
+      <workItem from="1611306234123" duration="7457000" />
     </task>
     <servers />
   </component>
