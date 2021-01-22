@@ -3,9 +3,8 @@ using System.IO.IsolatedStorage;
 using UnityEngine;
 
 namespace Controller{
-    public class CameraController : MonoBehaviour{
+    public class FollowTarget : MonoBehaviour{
         [SerializeField] Transform target;
-        [SerializeField] float smoothSpeed = 0.025f;
         Transform myTransform;
         void Start(){
             myTransform = transform;
@@ -13,7 +12,7 @@ namespace Controller{
                 throw new Exception("Error: No target transform has been added!");
         }
         void LateUpdate(){
-            myTransform.position = Vector3.Lerp(myTransform.position, target.position, smoothSpeed);
+            myTransform.position = target.position;
         }
     }
 }
