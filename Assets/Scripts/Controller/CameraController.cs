@@ -12,7 +12,7 @@ namespace Controller{
             if(target == null)
                 throw new Exception("Error: No target transform has been added!");
         }
-        void FixedUpdate(){
+        void LateUpdate(){
             myTransform.position = Vector3.Lerp(myTransform.position, target.position, smoothSpeed);
         }
     }
