@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +13,9 @@ namespace Controller{
         bool isPause;
         void Awake(){
             CoinObserver.SubscribeToCoinChange(this);
+        }
+        void OnDestroy(){
+            CoinObserver.UnSubscribeToCoinChange(this);
         }
 
         void Update(){

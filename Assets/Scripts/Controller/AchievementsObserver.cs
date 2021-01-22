@@ -1,10 +1,9 @@
-﻿using System;
-using Controller;
+﻿using Model;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
-namespace Model{
+namespace Controller
+{ 
     public class AchievementsObserver : MonoBehaviour, ICoinChange{
         
         delegate void CoinsChange(int amount);
@@ -30,6 +29,13 @@ namespace Model{
             }
             totalCoinsChanged?.Invoke($"Total coins collected: {Amount}");
         }
+        void OnDestroy(){
+            CoinObserver.UnSubscribeToCoinChange(this);
+            foreach (var coinAchievement in coinAchievements){
+                CoinsChanged -= coinAchievement.AddCoin;
+            }
+        }
+        
         public static void UnSubscribeToCoinChange(ICoinChange coinChange){
             CoinsChanged -= coinChange.AddCoin;
         }
@@ -37,9 +43,6 @@ namespace Model{
             Amount += 1;
             CoinsChanged?.Invoke(Amount);
             totalCoinsChanged?.Invoke($"Total coins collected: {Amount}");
-        }
-        void OnDestroy(){
-            CoinsChanged = null;
         }
     }
 }
