@@ -7,7 +7,7 @@ namespace Controller{
         [SerializeField] int attackDamage = 1;
         void OnTriggerEnter(Collider other){
             if (!other.gameObject.CompareTag("Player")) return;
-            other.gameObject.GetComponent<IHealth>().TakingDamage(attackDamage);
+            other.GetComponent<IHealth>().TakingDamage(attackDamage);
             Destroy(gameObject);
         }
     }

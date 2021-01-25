@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e4edd91b7b4d0c46aed735289d4d4ac, type: 3}
   m_Name: Rookie
   m_EditorClassIdentifier: 
-  goalAmount: 1
+  goalAmount: 2
   achievementPrefab: {fileID: 9005776303967848837, guid: 34821ade99af2e648b41bc868e91aabd, type: 3}

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7074158782304072843}
   - component: {fileID: 7074158782304072840}
   - component: {fileID: 7074158782304072841}
-  - component: {fileID: 7074158782304072886}
   - component: {fileID: 7074158782304072842}
   m_Layer: 0
   m_Name: GameObservers
@@ -46,21 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53cb812825547cabf795a2c700ad1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthChanged:
+  coinChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &7074158782304072841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,18 +61,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goalAmount: 2
---- !u!114 &7074158782304072886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7074158782304072887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b14cd5c1792e48545a9ec99f4b0dc48a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  gameMenuDisplayed:
+    m_PersistentCalls:
+      m_Calls: []
+  menuTextChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7074158782304072842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,3 +81,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinAchievements:
   - {fileID: 11400000, guid: 5a9ac251b0716db40997d03d110065b9, type: 2}
+  totalCoinsChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  parent: {fileID: 0}
+  popUpParent: {fileID: 0}

@@ -1,4 +1,5 @@
 ﻿using System;
+using Controller;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,18 +13,27 @@ namespace View{
 
         void Awake(){
             health = maxHealth;
+            
             healthChanged?.Invoke($"Health: ({Health}/{maxHealth})");
+          
         }
-
         public void TakingDamage(int damage){
             health -= damage;
-            
             if (health < 0){
                 health = 0;
-                //Invoke observers deathEvent
             }
-            print("Health: " + health);
             healthChanged?.Invoke($"Health: ({Health}/{maxHealth})");
+            MessageHandler.instance.Send<PlayerHealthMessage>(new PlayerHealthMessage(health));
+        }
+    }
+
+    public class PlayerHealthMessage{
+        int value;
+
+        public int Value => value;
+
+        public PlayerHealthMessage(int value){
+            this.value = value;
         }
     }
 

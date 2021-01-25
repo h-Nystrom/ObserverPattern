@@ -1,10 +1,10 @@
-﻿using System;
-using Controller;
+﻿using Controller;
+using Model;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace View{
-    public class CoinsCollected : MonoBehaviour, ICoinChange{
+    public class CoinsCollected : MonoBehaviour, ICoin{
 
         int coins;
         [SerializeField] UnityEvent<string> coinChanged;
@@ -15,13 +15,12 @@ namespace View{
                 coinChanged?.Invoke($"Coins: {value}");
             }
         }
-
-        void Awake(){
-            CoinObserver.SubscribeToCoinChange(this);
+        void Start(){
+            MessageHandler.instance.SubscribeTo<CoinMessage>(AddCoin);
             coinChanged?.Invoke($"Coins: {Coins}");
         }
-        public void AddCoin(int amount){
-            Coins += amount;
+        public void AddCoin(CoinMessage coinMessage){
+            Coins += coinMessage.Value;
         }
     }
 }

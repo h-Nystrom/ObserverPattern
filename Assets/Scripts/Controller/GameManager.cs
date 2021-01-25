@@ -1,21 +1,20 @@
-﻿using System;
+﻿using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using View;
 
 namespace Controller{
-    public class GameManager : MonoBehaviour, ICoinChange{
+    public class GameManager : MonoBehaviour{
         [SerializeField] int goalAmount = 2;
         int currentCoins;
         [SerializeField] UnityEvent<bool> gameMenuDisplayed;
         [SerializeField] UnityEvent<string> menuTextChanged;
         bool isGameOver;
         bool isPause;
-        void Awake(){
-            CoinObserver.SubscribeToCoinChange(this);
-        }
-        void OnDestroy(){
-            CoinObserver.UnSubscribeToCoinChange(this);
+        void Start(){
+            MessageHandler.instance.SubscribeTo<CoinMessage>(AddCoin);
+            MessageHandler.instance.SubscribeTo<PlayerHealthMessage>(ChangePlayerHealth);
         }
 
         void Update(){
@@ -24,14 +23,18 @@ namespace Controller{
             }
         }
 
-        public void AddCoin(int amount){
-            currentCoins += amount;
+        void ChangePlayerHealth(PlayerHealthMessage playerHealthMessage){
+            if(playerHealthMessage.Value > 0) return;
+            GameOver("You died");
+        }
+        void AddCoin(CoinMessage coinMessage){
+            currentCoins += coinMessage.Value;
             if (currentCoins < goalAmount) return;
-            Time.timeScale = 0;
             GameOver("Level completed!");
         }
 
         void GameOver(string gameOverText){
+            Time.timeScale = 0;
             gameMenuDisplayed?.Invoke(true);
             menuTextChanged?.Invoke(gameOverText);
             isGameOver = true;
@@ -45,7 +48,7 @@ namespace Controller{
             isPause = false;
             Time.timeScale = 1;
         }
-        public void OnPause(){
+        void OnPause(){
             if(isGameOver)
                 return;
             isPause = !isPause;
